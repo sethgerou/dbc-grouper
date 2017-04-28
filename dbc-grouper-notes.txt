@@ -1,0 +1,19 @@
+input into text field - one name per line
+
+WEEK1
+==========================
+import text field and make array of names
+Evaluate array length, and make appropriate sub arrays (set length, with null vals)
+For each sub array length times {week1.push {copy of name array}.select}
+
+WEEK2
+==========================
+copy sub arrays - set each value null - preserve length
+for each sub array length times {select from new copy of name array and see whether it was in this array previously, if not, put it in the array, if it was, put it in the next array}
+
+WEEK3
+==========================
+copy sub arrays - set each value null - preserve length
+for each sub array length times {select from new copy of name array and see whether it was in this array previously, if not, put it in the array, if it was, put it in the next array,}
+
+output text

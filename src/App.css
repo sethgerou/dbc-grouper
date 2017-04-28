@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  color: #7A8586;
+}
+
+.App-logo {
+  display: block;
+  margin: auto;
+  width: auto;
+}
+
+.App-header {
+  background-color: #F5F5F5;
+  height: 75px;
+  padding: 20px;
+  color: #7A8586;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button {
+  background-color: #26BBCB;
+  border-radius: 5px;
+  color: white;
+  font-size: .7em;
+  border: 0px;
+  padding: 5px 10px;
+  margin: 10px 5px;
+}
+
+#cohortNames {
+  width: 50%;
+}
+
+.center {
+  display: block;
+  margin: auto;
+}

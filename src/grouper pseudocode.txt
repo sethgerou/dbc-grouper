@@ -1,0 +1,65 @@
+dbc Grouper logic
+
+1. "Grouper" name
+2. Group should be at least 3 and no more than 4
+3. Group size: Min = 6 / Max = 32
+4. Text file input?
+5. Output is a text file of 3 weeks of groups
+6. Output file can be edited and used as input (for next 3 weeks)
+
+
+Form for entering up to 32 names.
+Requires 6+ names.
+Alternately, accepts a text file with names.
+
+The ideal group size is 4.
+A group must have at least 3 members.
+5 is preferable to 3.
+
+some scenarios:
+6 - 3, 3
+7 - 4, 3
+8 - 4, 4
+9 - 4, 5
+10 - 5, 5
+11 - 4, 4, 3
+12 - 4, 4, 4
+13 - 4, 4, 5
+14 - 4, 5, 5
+15 - 4, 4, 4, 3
+16 - 4, 4, 4, 4
+17 - 4, 4, 4, 5
+18 - 4, 4, 5, 5
+19 - 4, 4, 4, 4, 3
+20 - 4, 4, 4, 4, 4
+21 - 4, 4, 4, 4, 5
+22 - 4, 4, 4, 5, 5
+23 - 3, 4, 4, 4, 4, 4
+24 - 4, 4, 4, 4, 4, 4
+25 - 4, 4, 4, 4, 4, 5
+26 - 4, 4, 4, 4, 5, 5
+27 - 3, 4, 4, 4, 4, 4, 4
+28 - 4, 4, 4, 4, 4, 4, 4
+29 - 4, 4, 4, 4, 4, 4, 5
+30 - 4, 4, 4, 4, 4, 5, 5
+31 - 4, 4, 4, 4, 4, 4, 4, 3
+32 - 4, 4, 4, 4, 4, 4, 4, 4
+
+example names:
+Jordan Levine
+Matthew Fischer
+Eitan Green
+Julia Xu
+Seth Gerou
+Joshuan Mun
+Grace Noh
+Linsey Reed
+Emilie Thoreson
+Nicholas Jarin
+Philip Cornman
+Dan McKeon
+Elrey Belmonti
+Dillon Estelle
+Austin Kading
+
+https://color.adobe.com/create/color-wheel/?base=2&rule=Custom&selected=0&name=Screen%20Shot%202017-04-27%20at%202&mode=hex&rgbvalues=0.47843137254901963,0.5215686274509804,0.5254901960784314,0.10980392156862745,0.17647058823529413,0.2549019607843137,0.14901960784313725,0.7333333333333333,0.796078431372549,0.9411764705882353,0.3843137254901961,0.22745098039215686,0.9490196078431372,0.9490196078431372,0.9490196078431372&swatchOrder=0,1,2,3,4
