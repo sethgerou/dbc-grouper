@@ -63,3 +63,9 @@ Dillon Estelle
 Austin Kading
 
 https://color.adobe.com/create/color-wheel/?base=2&rule=Custom&selected=0&name=Screen%20Shot%202017-04-27%20at%202&mode=hex&rgbvalues=0.47843137254901963,0.5215686274509804,0.5254901960784314,0.10980392156862745,0.17647058823529413,0.2549019607843137,0.14901960784313725,0.7333333333333333,0.796078431372549,0.9411764705882353,0.3843137254901961,0.22745098039215686,0.9490196078431372,0.9490196078431372,0.9490196078431372&swatchOrder=0,1,2,3,4
+
+https://www.google.com/search?q=react+dom+.render&oq=react+dom+.render&aqs=chrome..69i57j0l5.5527j0j4&sourceid=chrome&ie=UTF-8
+https://facebook.github.io/react/blog/2015/10/01/react-render-and-top-level-api.html
+https://facebook.github.io/react/docs/react-dom.html
+http://stackoverflow.com/questions/35599387/how-to-render-a-react-component-es6-api-directly-using-reactdom
+http://stackoverflow.com/questions/33007402/is-there-any-difference-between-react-render-and-reactdom-render
