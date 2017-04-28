@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 import './App.css';
 
 class ButtonStrip extends Component {
-
-  newCohortForm() {
-    console.log("new cohort");
+  constructor() {
+    super();
+    this.setForm = this.setForm.bind(this);
   }
 
-  phase2Form() {
-    console.log("phase 2");
-  }
-
-  phase3Form() {
-    console.log("phase 3");
+  setForm(event) {
+    const selection = event.target.value;
+    this.props.buttonPress(selection);
   }
 
   render() {
     return(
       <div>
-        <button className="button" onClick={this.newCohortForm}>New Cohort</button>
-        <button className="button" onClick={this.phase2Form}>Phase 2</button>
-        <button className="button" onClick={this.phase3Form}>Phase 3</button>
+        <button className="button" value="NewCohortForm" onClick={this.setForm}>New Cohort</button>
+        <button className="button" value="Phase2Form" onClick={this.setForm}>Phase 2</button>
+        <button className="button" value="Phase3Form" onClick={this.setForm}>Phase 3</button>
       </div>
       )
     }

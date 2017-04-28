@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 import logo from './dbc-logo.svg';
 import fish from './grouper.png';
 import './App.css';
@@ -7,17 +7,52 @@ import ButtonStrip from './ButtonStrip';
 import NewCohortForm from './NewCohortForm';
 import Phase2Form from './Phase2Form';
 import Phase3Form from './Phase3Form';
+import Groups from './Groups';
+import jsonData from './groupsize.json';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedForm: '',
+      names: [],
+    };
+    this.formSelect = this.formSelect.bind(this);
+    this.getNames = this.getNames.bind(this);
+  }
 
-componentDidMount() {
-  this.showForms();
+formSelect(selection) {
+  this.setState({
+    selectedForm: selection,
+  });
 }
 
-showforms() {
-  if (true) {this.ReactDom.render(<NewCohortForm />, document.getElementById('forms'))}
-  if (true) {this.ReactDom.render(<Phase2Form />, document.getElementById('forms'))}
-  if (true) {this.ReactDom.render(<Phase3Form />, document.getElementById('forms'))}
+getNames(names) {
+  this.setState({
+    names: names
+  })
+}
+
+getForms() {
+  if (this.state.selectedForm === 'NewCohortForm') {
+    return <NewCohortForm namesSubmission={this.getNames}/>;
+  }
+  if (this.state.selectedForm === 'Phase2Form') {
+    return <Phase2Form />;
+  }
+  if (this.state.selectedForm === 'Phase3Form') {
+    return <Phase3Form />;
+  }
+}
+
+showGroups() {
+  groupSizes = jsonData[this.state.names.length.toString()]
+  for (i in groupSizes) {
+    var group
+  }
+  if (this.state.names) {
+    return <Groups nameGiver={this.state.names} />
+  }
 }
 
   render() {
@@ -28,11 +63,12 @@ showforms() {
           <h3 className="title">grouper </h3>
           <img className="title" src={fish} alt="fish"/>
         </div>
-          <ButtonStrip />
+          <ButtonStrip buttonPress={this.formSelect}/>
           <div id="forms">
-
+            {this.getForms()}
           </div>
-
+          {this.showGroups()}
+          {jsonData[this.state.names.length.toString()]}
       </div>
     );
   }
