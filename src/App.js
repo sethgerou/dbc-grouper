@@ -9,6 +9,17 @@ import Phase2Form from './Phase2Form';
 import Phase3Form from './Phase3Form';
 
 class App extends Component {
+
+componentDidMount() {
+  this.showForms();
+}
+
+showforms() {
+  if (true) {this.ReactDom.render(<NewCohortForm />, document.getElementById('forms'))}
+  if (true) {this.ReactDom.render(<Phase2Form />, document.getElementById('forms'))}
+  if (true) {this.ReactDom.render(<Phase3Form />, document.getElementById('forms'))}
+}
+
   render() {
     return (
       <div className="App">
@@ -18,15 +29,10 @@ class App extends Component {
           <img className="title" src={fish} alt="fish"/>
         </div>
           <ButtonStrip />
-          { if (1 === 1)
-            {<NewCohortForm />}
-          }
-          {if (1 === 1)
-            {<Phase2Form />}
-          }
-          {if (1 === 1)
-            {<Phase3Form />}
-          }
+          <div id="forms">
+
+          </div>
+
       </div>
     );
   }
