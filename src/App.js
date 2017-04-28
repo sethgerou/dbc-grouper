@@ -18,9 +18,15 @@ class App extends Component {
           <img className="title" src={fish} alt="fish"/>
         </div>
           <ButtonStrip />
-          <NewCohortForm />
-          <Phase2Form />
-          <Phase3Form />
+          { if (1 === 1)
+            {<NewCohortForm />}
+          }
+          {if (1 === 1)
+            {<Phase2Form />}
+          }
+          {if (1 === 1)
+            {<Phase3Form />}
+          }
       </div>
     );
   }
