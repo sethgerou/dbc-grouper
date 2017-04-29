@@ -46,12 +46,18 @@ getForms() {
 }
 
 showGroups() {
-  groupSizes = jsonData[this.state.names.length.toString()]
-  for (i in groupSizes) {
-    var group
+  const groupS = jsonData[this.state.names.length.toString()]
+  for (var group in groupS) {
+    for (var spot in groupS[group]) {
+      var randIndex = Math.floor(Math.random()*this.state.names.length)
+      var name = this.state.names[randIndex]
+      groupS[group][spot] = name
+      this.state.names.splice(randIndex, 1)
+      console.log(groupS[group][spot])
+    }
   }
-  if (this.state.names) {
-    return <Groups nameGiver={this.state.names} />
+  if (groupS) {
+    return <Groups sendGroups={groupS} />
   }
 }
 
