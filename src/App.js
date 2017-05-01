@@ -46,19 +46,24 @@ getForms() {
 }
 
 showGroups() {
-  const groupS = jsonData[this.state.names.length.toString()]
-  for (var group in groupS) {
-    for (var spot in groupS[group]) {
+  const weekOne = jsonData[this.state.names.length.toString()]
+  const weekTwo = jsonData[this.state.names.length.toString()]
+  const weekThree = jsonData[this.state.names.length.toString()]
+
+  for (var group in weekOne) {
+    for (var spot in weekOne[group]) {
       var randIndex = Math.floor(Math.random()*this.state.names.length)
       var name = this.state.names[randIndex]
-      groupS[group][spot] = name
+      weekOne[group][spot] = name
       this.state.names.splice(randIndex, 1)
-      console.log(groupS[group][spot])
+      console.log(weekOne[group][spot])
     }
   }
-  if (groupS) {
-    return <Groups sendGroups={groupS} />
+
+  if (weekOne) {
+    return <Groups sendGroups={weekOne} />
   }
+
 }
 
   render() {
@@ -74,7 +79,7 @@ showGroups() {
             {this.getForms()}
           </div>
           {this.showGroups()}
-          {jsonData[this.state.names.length.toString()]}
+
       </div>
     );
   }

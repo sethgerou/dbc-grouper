@@ -7,20 +7,21 @@ class Groups extends Component {
     super();
 
     this.displayGroups = this.displayGroups.bind(this);
+
   }
+
 
   displayGroups() {
 
-      var displayFormatted = ""
-
+      var displayFormatted = '{\n'
       for (const group in this.props.sendGroups) {
-        displayFormatted += "<h3>" + group + "</h3>"
+        displayFormatted += '"' + group + '": ['
 
-        for (const name in this.props.sendGroups[group]) {
-          displayFormatted += "<p>" + this.props.sendGroups[group][name] + "</p>"
+          displayFormatted += '"' + this.props.sendGroups[group].join('","') + '"],\n'
         }
-      }
-
+        displayFormatted = displayFormatted.slice(0,-2)
+        displayFormatted += '\n}'
+      console.log(displayFormatted)
       return (displayFormatted);
   }
 
@@ -28,14 +29,14 @@ class Groups extends Component {
 
     return(
       <div>
-        {/* {this.displayGroups()} */}
-          <h3>{this.props.sendGroups}</h3>
+        {this.displayGroups()}
+          {/* <h3>{this.props.sendGroups}</h3>
           {
           this.props.sendGroups.map((name) => {
           return (<p>{name}</p>)
-          }
-        )
-        }
+          } */}
+        {/* )
+        } */}
       </div>
     )
 }
