@@ -16,6 +16,7 @@ class App extends Component {
     this.state = {
       selectedForm: '',
       names: [],
+      paired: {},
     };
     this.formSelect = this.formSelect.bind(this);
     this.getNames = this.getNames.bind(this);
@@ -28,9 +29,20 @@ formSelect(selection) {
 }
 
 getNames(names) {
-  this.setState({
+  this.setState({  // stores an array of input names
     names: names
   })
+  var pairdata = {};  //  for each name - adds name key and names array value to object
+  for (var name in names) {
+    pairdata[names[name]] = names.slice()
+}
+  for (const key of Object.keys(pairdata)) {
+      const i = pairdata[key].indexOf(key)
+      pairdata[key].splice(i, 1)
+  }
+    this.setState({
+      paired: pairdata,  // sets this.state.paired to object
+    });
 }
 
 getForms() {
@@ -56,7 +68,6 @@ showGroups() {
       var name = this.state.names[randIndex]
       weekOne[group][spot] = name
       this.state.names.splice(randIndex, 1)
-      console.log(weekOne[group][spot])
     }
   }
 

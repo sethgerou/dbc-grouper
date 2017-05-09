@@ -21,7 +21,6 @@ class Groups extends Component {
         }
         displayFormatted = displayFormatted.slice(0,-2)
         displayFormatted += '\n}'
-      console.log(displayFormatted)
       return (displayFormatted);
   }
 
