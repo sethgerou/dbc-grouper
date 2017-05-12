@@ -9,6 +9,7 @@ import Phase2Form from './Phase2Form';
 import Phase3Form from './Phase3Form';
 import Groups from './Groups';
 import jsonData from './groupsize.json';
+import classes from './classes';
 
 class App extends Component {
   constructor() {
@@ -70,6 +71,8 @@ showGroups() {
       this.state.names.splice(randIndex, 1)
     }
   }
+
+
 
   if (weekOne) {
     return <Groups sendGroups={weekOne} />
