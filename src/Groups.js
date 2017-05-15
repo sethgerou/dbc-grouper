@@ -13,16 +13,30 @@ class Groups extends Component {
 
   displayGroups() {
 
-      var displayFormatted = '{\n'
-      for (const group in this.props.sendGroups) {
-        displayFormatted += '"' + group + '": ['
-
-          displayFormatted += '"' + this.props.sendGroups[group].join('","') + '"],\n'
-        }
-        displayFormatted = displayFormatted.slice(0,-2)
-        displayFormatted += '\n}'
-      return (displayFormatted);
+    var display =this.props.sendGroups.map(
+      (group, index) => {
+        let formatted = '';
+        for (const student of group.students) {
+                formatted += student.name + " "
+                }
+        return (<p key={index}>{formatted}</p>)
+      }
+    )
+    return display;
   }
+
+  //     var displayFormatted = '';
+  //     for (const group of this.props.sendGroups() {
+  //       displayFormatted += " Group: "
+  //       for (const student of group.students) {
+  //         displayFormatted += student.name + ","
+  //         }
+  //         displayFormatted = displayFormatted.slice(0,-1)
+  //         displayFormatted += "---"
+  //       }
+  //
+  //     return (<p>{displayFormatted}</p>);
+  // }
 
   render() {
 
