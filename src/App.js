@@ -76,19 +76,29 @@ showGroups = () => {
   const halfStudents = Math.floor(studentsCount/2)
   if (halfStudents < 6) {
     const group = new Group();
-    group.students = this.state.students.slice(0, halfStudents);
+      group.students = this.state.students.slice(0, halfStudents);
     const group2 = new Group();
-    group2.students = this.state.students.slice(halfStudents, studentsCount);
+      group2.students = this.state.students.slice(halfStudents, studentsCount);
   newGroups.push(group, group2)
-} else if (halfStudents < 10) {
-  const group = new Group();
-  group.students = this.state.students.slice(0, halfStudents/2);
-  const group2 = new Group();
-  group2.students = this.state.students.slice(halfStudents/2, halfStudents);
+  var weekTwo = this.state.students.slice()
+  for (var i = 2; i < halfStudents; i+2){
+    weekTwo.splice(weekTwo.length,0,weekTwo.splice(i,2))
+  }
   const group3 = new Group();
-  group3.students = this.state.students.slice(halfStudents, studentsCount-(halfStudents/2))
+    group3.students = weekTwo.slice(0, halfStudents);
   const group4 = new Group();
-  group4.students = this.state.students.slice(studentsCount-(halfStudents/2), studentsCount)
+    group4.students = weekTwo.slice(halfStudents, studentsCount);
+    newGroups.push(group3, group4)
+    console.log(weekTwo)
+} else if (halfStudents < 10) {
+    const group = new Group();
+      group.students = this.state.students.slice(0, halfStudents/2);
+    const group2 = new Group();
+      group2.students = this.state.students.slice(halfStudents/2, halfStudents);
+    const group3 = new Group();
+      group3.students = this.state.students.slice(halfStudents, studentsCount-(halfStudents/2))
+    const group4 = new Group();
+      group4.students = this.state.students.slice(studentsCount-(halfStudents/2), studentsCount)
     newGroups.push(group, group2, group3, group4)
 }
 return <Groups sendGroups={newGroups} />
